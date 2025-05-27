@@ -17,15 +17,23 @@ const auth = getAuth(app);
 window.register = () => {
   const email = document.getElementById("email").value;
   const password = document.getElementById("password").value;
+
   createUserWithEmailAndPassword(auth, email, password)
-    .then(() => alert("Регистрация прошла успешно!"))
-    .catch(error => alert("Ошибка: " + error.message));
+    .then(() => {
+      alert("Регистрация прошла успешно!");
+      window.location.href = "index.html";
+    })
+    .catch(error => alert("Ошибка регистрации: " + error.message));
 };
 
 window.login = () => {
   const email = document.getElementById("email").value;
   const password = document.getElementById("password").value;
+
   signInWithEmailAndPassword(auth, email, password)
-    .then(() => alert("Вы вошли!"))
-    .catch(error => alert("Ошибка: " + error.message));
+    .then(() => {
+      alert("Вы вошли!");
+      window.location.href = "index.html";
+    })
+    .catch(error => alert("Ошибка входа: " + error.message));
 };
