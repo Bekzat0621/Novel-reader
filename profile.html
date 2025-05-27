@@ -1,16 +1,19 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
-  <meta charset="UTF-8">
-  <title>Profile</title>
-  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <title>Профиль</title>
 </head>
 <body>
-  <div class="profile-container">
-    <h2 data-i18n="profile">User Profile</h2>
-    <p><strong data-i18n="email">Email:</strong> <span id="userEmail"></span></p>
-    <button onclick="logout()" data-i18n="logout">Logout</button>
-  </div>
+  <h2>Профиль</h2>
+  <p>Email: <span id="userEmail"></span></p>
+  <button onclick="logout()">Выйти</button>
+  <br/>
+  <a href="settings.html">Назад</a>
+
+  <!-- Firebase -->
+  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-auth-compat.js"></script>
   <script src="firebase.js"></script>
   <script src="profile.js"></script>
 </body>
