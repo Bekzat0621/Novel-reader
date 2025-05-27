@@ -1,25 +1,31 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Novel Reader</title>
-  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <header>
-    <h1 data-i18n="title">Novel Reader</h1>
-    <nav>
-      <button onclick="goToSettings()" data-i18n="settings">Settings</button>
-      <button id="loginBtn" onclick="goToAuth()" data-i18n="login">Login</button>
-      <button id="profileBtn" onclick="goToProfile()" style="display: none;" data-i18n="profile">Profile</button>
-    </nav>
-  </header>
-  <main>
-    <input type="text" placeholder="Search novels..." data-i18n-placeholder="search_placeholder" />
-    <div id="novelsList"></div>
-  </main>
-  <script src="lang.js"></script>
-  <script src="index.js"></script>
+  <h1>Добро пожаловать в Novel Reader</h1>
+
+  <nav>
+    <a href="settings.html">Настройки</a>
+    <a href="auth.html" id="authLink">Регистрация / Вход</a>
+    <a href="profile.html" id="profileLink" style="display:none;">Профиль</a>
+  </nav>
+
+  <div id="book-list">Здесь будет список романов...</div>
+
+  <!-- Firebase -->
+  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-auth-compat.js"></script>
+  <script src="firebase.js"></script>
+  <script>
+    firebase.auth().onAuthStateChanged(user => {
+      if (user) {
+        document.getElementById("authLink").style.display = "none";
+        document.getElementById("profileLink").style.display = "inline";
+      }
+    });
+  </script>
 </body>
 </html>
