@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Вход / Регистрация</title>
+</head>
+<body>
+  <h2>Регистрация и Вход</h2>
+  <input type="email" id="email" placeholder="Email" required><br>
+  <input type="password" id="password" placeholder="Пароль" required><br>
+  <button onclick="register()">Зарегистрироваться</button>
+  <button onclick="login()">Войти</button>
+
+  <p id="status"></p>
+  <a href="admin.html">Перейти в админку</a>
+
+  <script type="module" src="auth.js"></script>
+</body>
+</html>

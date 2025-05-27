@@ -1,39 +1,43 @@
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.11.0/firebase-app.js";
+import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.11.0/firebase-auth.js";
 
-function register() {
+const firebaseConfig = {
+  apiKey: "AIzaSyDzJhLGXA8KvE5C5ZaftHfaR5mlRaLdPE0",
+  authDomain: "novell7.firebaseapp.com",
+  projectId: "novell7",
+  storageBucket: "novell7.appspot.com",
+  messagingSenderId: "806101665846",
+  appId: "1:806101665846:web:7db9faed9d9f92b80b3097",
+  measurementId: "G-BBKZ09PVWG"
+};
+
+const app = initializeApp(firebaseConfig);
+const auth = getAuth(app);
+
+window.register = async () => {
   const email = document.getElementById("email").value;
   const password = document.getElementById("password").value;
-  auth.createUserWithEmailAndPassword(email, password)
-    .then(user => {
-      db.collection("users").doc(user.user.uid).set({
-        email,
-        role: "user"
-      });
-    })
-    .catch(e => alert(e.message));
-}
+  try {
+    const userCredential = await createUserWithEmailAndPassword(auth, email, password);
+    document.getElementById("status").innerText = "Успешная регистрация: " + userCredential.user.uid;
+  } catch (error) {
+    document.getElementById("status").innerText = "Ошибка регистрации: " + error.message;
+  }
+};
 
-function login() {
+window.login = async () => {
   const email = document.getElementById("email").value;
   const password = document.getElementById("password").value;
-  auth.signInWithEmailAndPassword(email, password)
-    .then(user => {
-      document.getElementById("status").innerText = "Вход выполнен";
-      loadBooks();
-    })
-    .catch(e => alert(e.message));
-}
+  try {
+    const userCredential = await signInWithEmailAndPassword(auth, email, password);
+    document.getElementById("status").innerText = "Успешный вход: " + userCredential.user.uid;
+  } catch (error) {
+    document.getElementById("status").innerText = "Ошибка входа: " + error.message;
+  }
+};
 
-function loadBooks() {
-  db.collection("books").get().then(snapshot => {
-    const list = document.getElementById("book-list");
-    list.innerHTML = "<h2>Романы:</h2>";
-    snapshot.forEach(doc => {
-      const data = doc.data();
-      const link = document.createElement("a");
-      link.href = "read.html?id=" + doc.id;
-      link.innerText = data.title;
-      list.appendChild(link);
-      list.appendChild(document.createElement("br"));
-    });
-  });
-}
+onAuthStateChanged(auth, (user) => {
+  if (user) {
+    document.getElementById("status").innerText = "Вы вошли как: " + user.uid;
+  }
+});
