@@ -1,24 +1,22 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta charset="UTF-8">
   <title>Novel Reader</title>
-  <link rel="stylesheet" href="style.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
   <script type="module" src="main.js" defer></script>
 </head>
 <body>
   <header>
     <h1>Novel Reader</h1>
     <nav>
-      <button id="btn-home">Главная</button>
-      <button id="btn-settings">Настройки</button>
-      <button id="btn-auth">Вход / Регистрация</button>
-      <button id="btn-profile" style="display: none;">Профиль</button>
+      <button id="homeBtn" data-i18n="home">Главная</button>
+      <button id="settingsBtn" data-i18n="settings">Настройки</button>
+      <button id="authBtn" data-i18n="loginRegister">Вход / Регистрация</button>
+      <button id="profileBtn" style="display:none;" data-i18n="profile">Профиль</button>
     </nav>
   </header>
-  <main id="main-content">
-    <!-- Контент загружается динамически -->
-  </main>
+  <main id="content"></main>
 </body>
 </html>

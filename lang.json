@@ -1,0 +1,23 @@
+
+{
+  "ru": {
+    "home": "Главная",
+    "settings": "Настройки",
+    "loginRegister": "Вход / Регистрация",
+    "profile": "Профиль",
+    "adminPanel": "Админ-панель",
+    "language": "Язык",
+    "back": "Назад",
+    "novelList": "Список романов"
+  },
+  "en": {
+    "home": "Home",
+    "settings": "Settings",
+    "loginRegister": "Login / Register",
+    "profile": "Profile",
+    "adminPanel": "Admin Panel",
+    "language": "Language",
+    "back": "Back",
+    "novelList": "Novel List"
+  }
+}
