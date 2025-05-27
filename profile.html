@@ -1,1 +1,20 @@
-<!-- Профиль пользователя -->
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Профиль</title>
+  <link rel="stylesheet" href="css/style.css"/>
+</head>
+<body>
+  <a href="settings.html" class="back-arrow">← Назад</a>
+  <h2>Профиль пользователя</h2>
+  <div class="profile">
+    <p><strong>Имя:</strong> <span id="userName">Загрузка...</span></p>
+    <p><strong>Email:</strong> <span id="userEmail">Загрузка...</span></p>
+    <p><strong>Пароль:</strong> <span id="passwordField">•••••••</span> <button onclick="togglePassword()">Показать</button></p>
+  </div>
+  <script src="js/auth.js"></script>
+</body>
+</html>

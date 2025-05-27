@@ -1,1 +1,26 @@
-<!-- Страница настроек -->
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Настройки</title>
+  <link rel="stylesheet" href="css/style.css"/>
+</head>
+<body>
+  <a href="index.html" class="back-arrow">← Главная</a>
+  <h2>Настройки</h2>
+  <div class="settings">
+    <button onclick="goToProfile()">Профиль</button>
+    <button id="adminBtn" style="display: none;" onclick="goToAdmin()">Админ-панель</button>
+    <button onclick="toggleLanguage()">Язык: <span id="langLabel">Русский</span></button>
+    <button onclick="logout()">Выйти</button>
+  </div>
+  <script src="js/lang.js"></script>
+  <script src="js/auth.js"></script>
+  <script>
+    function goToProfile() { window.location.href = 'profile.html'; }
+    function goToAdmin() { window.open('admin.html', '_blank'); }
+  </script>
+</body>
+</html>

@@ -1,1 +1,23 @@
-<!-- Админ-панель -->
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Админ-панель</title>
+  <link rel="stylesheet" href="css/style.css"/>
+</head>
+<body>
+  <a href="settings.html" class="back-arrow">← Назад</a>
+  <h2>Админ-панель</h2>
+  <div class="admin-form">
+    <input type="text" placeholder="Название" id="novelTitle"/>
+    <input type="text" placeholder="Автор" id="novelAuthor"/>
+    <textarea placeholder="Описание" id="novelDesc"></textarea>
+    <textarea placeholder="Содержание" id="novelContent"></textarea>
+    <button onclick="addNovel()">Добавить</button>
+  </div>
+  <div id="novelListAdmin"></div>
+  <script src="js/adminCheck.js"></script>
+</body>
+</html>
