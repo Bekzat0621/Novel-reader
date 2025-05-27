@@ -1,15 +1,20 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <title>Авторизация</title>
+  <meta charset="UTF-8">
+  <title>Auth</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <h2>Регистрация / Вход</h2>
-  <input type="email" id="email" placeholder="Email"><br>
-  <input type="password" id="password" placeholder="Пароль"><br>
-  <button onclick="register()">Регистрация</button>
-  <button onclick="login()">Вход</button>
-  <script type="module" src="auth.js"></script>
+  <div class="auth-container">
+    <h2 data-i18n="auth_title">Login / Register</h2>
+    <input type="email" id="email" placeholder="Email">
+    <input type="password" id="password" placeholder="Password">
+    <button onclick="login()" data-i18n="login">Login</button>
+    <button onclick="register()" data-i18n="register">Register</button>
+    <p id="authMessage"></p>
+  </div>
+  <script src="firebase.js"></script>
+  <script src="auth.js"></script>
 </body>
 </html>

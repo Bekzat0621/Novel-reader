@@ -1,20 +1,17 @@
-
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="en">
 <head>
-  <meta charset="UTF-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Профиль</title>
-  <link rel="stylesheet" href="css/style.css"/>
+  <meta charset="UTF-8">
+  <title>Profile</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <a href="settings.html" class="back-arrow">← Назад</a>
-  <h2>Профиль пользователя</h2>
-  <div class="profile">
-    <p><strong>Имя:</strong> <span id="userName">Загрузка...</span></p>
-    <p><strong>Email:</strong> <span id="userEmail">Загрузка...</span></p>
-    <p><strong>Пароль:</strong> <span id="passwordField">•••••••</span> <button onclick="togglePassword()">Показать</button></p>
+  <div class="profile-container">
+    <h2 data-i18n="profile">User Profile</h2>
+    <p><strong data-i18n="email">Email:</strong> <span id="userEmail"></span></p>
+    <button onclick="logout()" data-i18n="logout">Logout</button>
   </div>
-  <script src="js/auth.js"></script>
+  <script src="firebase.js"></script>
+  <script src="profile.js"></script>
 </body>
 </html>

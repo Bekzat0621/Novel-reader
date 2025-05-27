@@ -1,22 +1,25 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Novel Reader</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="style.css">
-  <script type="module" src="main.js" defer></script>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <header>
-    <h1>Novel Reader</h1>
+    <h1 data-i18n="title">Novel Reader</h1>
     <nav>
-      <button id="homeBtn" data-i18n="home">Главная</button>
-      <button id="settingsBtn" data-i18n="settings">Настройки</button>
-      <button id="authBtn" data-i18n="loginRegister">Вход / Регистрация</button>
-      <button id="profileBtn" style="display:none;" data-i18n="profile">Профиль</button>
+      <button onclick="goToSettings()" data-i18n="settings">Settings</button>
+      <button id="loginBtn" onclick="goToAuth()" data-i18n="login">Login</button>
+      <button id="profileBtn" onclick="goToProfile()" style="display: none;" data-i18n="profile">Profile</button>
     </nav>
   </header>
-  <main id="content"></main>
+  <main>
+    <input type="text" placeholder="Search novels..." data-i18n-placeholder="search_placeholder" />
+    <div id="novelsList"></div>
+  </main>
+  <script src="lang.js"></script>
+  <script src="index.js"></script>
 </body>
 </html>

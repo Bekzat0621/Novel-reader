@@ -1,23 +1,17 @@
-
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="en">
 <head>
-  <meta charset="UTF-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Админ-панель</title>
-  <link rel="stylesheet" href="css/style.css"/>
+  <meta charset="UTF-8">
+  <title>Admin Panel</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <a href="settings.html" class="back-arrow">← Назад</a>
-  <h2>Админ-панель</h2>
-  <div class="admin-form">
-    <input type="text" placeholder="Название" id="novelTitle"/>
-    <input type="text" placeholder="Автор" id="novelAuthor"/>
-    <textarea placeholder="Описание" id="novelDesc"></textarea>
-    <textarea placeholder="Содержание" id="novelContent"></textarea>
-    <button onclick="addNovel()">Добавить</button>
+  <div class="admin-container">
+    <h2 data-i18n="admin_panel">Admin Panel</h2>
+    <p>Here admin can manage novels and users.</p>
+    <a href="settings.html" data-i18n="back">← Back to Settings</a>
   </div>
-  <div id="novelListAdmin"></div>
-  <script src="js/adminCheck.js"></script>
+  <script src="firebase.js"></script>
+  <script src="admin.js"></script>
 </body>
 </html>

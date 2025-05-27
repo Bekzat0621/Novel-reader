@@ -1,26 +1,20 @@
-
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="en">
 <head>
-  <meta charset="UTF-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Настройки</title>
-  <link rel="stylesheet" href="css/style.css"/>
+  <meta charset="UTF-8">
+  <title>Settings</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <a href="index.html" class="back-arrow">← Главная</a>
-  <h2>Настройки</h2>
-  <div class="settings">
-    <button onclick="goToProfile()">Профиль</button>
-    <button id="adminBtn" style="display: none;" onclick="goToAdmin()">Админ-панель</button>
-    <button onclick="toggleLanguage()">Язык: <span id="langLabel">Русский</span></button>
-    <button onclick="logout()">Выйти</button>
+  <div class="settings-container">
+    <h2 data-i18n="settings">Settings</h2>
+    <button onclick="changeLanguage('en')">English</button>
+    <button onclick="changeLanguage('ru')">Русский</button>
+    <a href="profile.html" data-i18n="profile">Profile</a>
+    <a href="admin.html" id="adminLink" style="display:none;" data-i18n="admin_panel">Admin Panel</a>
+    <a href="index.html" data-i18n="back">Back to Main</a>
   </div>
-  <script src="js/lang.js"></script>
-  <script src="js/auth.js"></script>
-  <script>
-    function goToProfile() { window.location.href = 'profile.html'; }
-    function goToAdmin() { window.open('admin.html', '_blank'); }
-  </script>
+  <script src="firebase.js"></script>
+  <script src="settings.js"></script>
 </body>
 </html>
