@@ -1,18 +1,16 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Admin - Добавить роман</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Novel Reader</title>
 </head>
 <body>
-  <h1>Добавление романа</h1>
-  <form id="novelForm">
-    <input type="text" id="title" placeholder="Название романа" required><br>
-    <textarea id="description" placeholder="Описание" required></textarea><br>
-    <button type="submit">Добавить</button>
-  </form>
+  <h1>Novel Reader</h1>
+  <input type="text" id="searchInput" placeholder="Поиск романа..." />
+  <button onclick="window.location.href='auth.html'">Регистрация / Вход</button>
+  <div id="novels"></div>
 
-  <script type="module" src="app.js"></script>
+  <script type="module" src="home.js"></script>
 </body>
 </html>
