@@ -1,16 +1,17 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
-  <meta charset="UTF-8">
-  <title>Admin Panel</title>
-  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <title>Админ-панель</title>
 </head>
 <body>
-  <div class="admin-container">
-    <h2 data-i18n="admin_panel">Admin Panel</h2>
-    <p>Here admin can manage novels and users.</p>
-    <a href="settings.html" data-i18n="back">← Back to Settings</a>
-  </div>
+  <h2>Админ-панель</h2>
+  <p>Управление контентом будет здесь</p>
+  <a href="settings.html">← Назад</a>
+
+  <!-- Firebase -->
+  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-auth-compat.js"></script>
   <script src="firebase.js"></script>
   <script src="admin.js"></script>
 </body>
